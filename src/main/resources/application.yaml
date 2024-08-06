@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: wallet_rest
+  liquibase:
+    enabled: true
+    change-log: db/changelog/changelog-master.xml
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/interview_test
+    username: user
+    password: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
