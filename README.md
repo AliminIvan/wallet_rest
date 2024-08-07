@@ -33,6 +33,12 @@ Postgresql<br>
     "amount": 1200
 }<br>
 <br>
+Образец POST запроса<br>
+- http://localhost:8080/api/v1/wallet
+<br>
+Образец GET запроса<br>
+- http://localhost:8080/api/v1/wallets/{нужный UUID}
+<br>
 <br>
 Credentials for db:<br>
     url: jdbc:postgresql://localhost:5432/interview_test<br>
