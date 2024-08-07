@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import java.math.BigDecimal;
 
 import static com.ivanalimin.interview.test.wallet_rest.web.WalletTestData.*;
+import static java.math.RoundingMode.HALF_UP;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -57,7 +58,7 @@ class WalletControllerTest extends AbstractControllerTest {
                 .andDo(print())
                 .andExpect(status().isNoContent());
         Wallet dbWalletAfterUpdate = repository.findById(UUID_2).orElseThrow();
-        assertEquals(BigDecimal.valueOf(5000), dbWalletAfterUpdate.getAmount());
+        assertEquals(BigDecimal.valueOf(5000).setScale(2, HALF_UP), dbWalletAfterUpdate.getAmount());
     }
 
     @Test
@@ -74,7 +75,7 @@ class WalletControllerTest extends AbstractControllerTest {
                 .andDo(print())
                 .andExpect(status().isNoContent());
         Wallet dbWalletAfterUpdate = repository.findById(UUID_2).orElseThrow();
-        assertEquals(BigDecimal.valueOf(1000), dbWalletAfterUpdate.getAmount());
+        assertEquals(BigDecimal.valueOf(1000).setScale(2, HALF_UP), dbWalletAfterUpdate.getAmount());
     }
 
     @Test
