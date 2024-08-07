@@ -31,4 +31,10 @@ Postgresql<br>
     "walletId": "80244a3f-6870-46b0-87b4-26715d849f7e",
     "operationType": "DEPOSIT",
     "amount": 1200
-}
+}<br>
+<br>
+<br>
+Credentials for db:<br>
+    url: jdbc:postgresql://localhost:5432/interview_test<br>
+    username: user<br>
+    password: postgres<br>
